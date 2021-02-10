@@ -2,7 +2,7 @@ h2 {
   font-family: "Rajdhani", sans-serif;
 }
 main {
-  background-image: #f3e9f1;
+  background-color: rgba(243, 239, 239, 0.904);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -21,7 +21,7 @@ footer a {
   font-size: 2.8em;
 }
 #banner {
-  background-image: url("bg_body.png");
+  background-image: url("Retro_Camera.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
