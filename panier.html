@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Orinoco - Le site de référence pour votre appareil photo"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+		<title>Orinoco - Panier</title>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<a class="navbar-brand" href="index.html"><img class="mr-3" src="logo.png" height="60" alt="Site logo"/></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"><span class="navbar-toggler-icon"></span></button>
+				<div id="navbarContent" class="collapse navbar-collapse">
+					<ul class="navbar-nav w-100 d-flex justify-content-end">
+						<li class="nav-item"><a class="nav-link font-weight-bold" href="index.html">NOS PRODUITS</a></li>
+						<li class="nav-item active">
+							<a class="nav-link font-weight-bold" href="panier.html">
+								PANIER
+								<i class="fas fa-shopping-cart"></i>
+								<span id="cart_number"></span>
+							</a>
+						</li>
+						<li class="nav-item"><a class="nav-link font-weight-bold" href="confirmation.html">COMMANDE</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<section id="banner">
+			<div id="title_container" class="text-uppercase">
+				<h1>Appareils-photo <br/>argentiques & vintage</h1>
+			</div>
+		</section>
+		<main class="pb-4">
+			<section class="bg-white col-md-auto text-center mb-5 pt-3 pb-2">
+				<h2>Votre sélection</h2>
+			</section>
+			<section class="container bg-white pt-5 pb-5 rounded">
+				<div id="tableau_panier" class="">
+					<table class="table table-striped table-bordered table-sm">
+						<thead class="thead-dark">
+							<tr>
+								<th class="text-center">
+									Article
+								</th>
+								<th class="text-center">
+									Quantité
+								</th>
+								<th class="text-center">
+									Prix unitaire
+								</th>
+								<th class="text-center">
+									Total
+								</th>
+								<th class="text-center"></th>
+							</tr>
+						</thead>
+						<tbody id="ajout_panier"></tbody>
+						<tr>
+							<td class="text-right font-weight-bold" colspan="3">
+								TOTAL
+							</td>
+							<td id="prix_total" class="text-center font-weight-bold"></td>
+						</tr>
+					</table>
+				</div>
+				<div class="text-center">
+					<button id="vider_panier" class="btn btn-outline-secondary" type="button" onclick="viderPanier()">Vider le panier</button>
+					<div id="valid_commande" class="btn btn-success"><a href="#formulaire" class="text-white">Poursuivre votre commande</a></div>
+					<div id="panier_vide" class="text-center"></div>
+				</div>
+			</section>
+			<section id="formulaire" class="container bg-white pb-4 rounded mt-4">
+				<form class="text-center mx-auto pb-4 pt-4">
+					<h1 class="col-8 rounded mx-auto mb-4 bg-secondary text-white"> VALIDATION DE COMMANDE</h1>
+					<div class="text-center pb-4">
+						Veuillez renseignez vos coordonnées pour finaliser votre commande
+					</div>
+					<div class="form-row justify-content-center">
+						<div class="form-group form-inline justify-content-center mr-2">
+							<label for="name" class="mr-2">NOM</label>
+							<input type="text" class="champ form-control" id="name" name="name" />
+						</div>
+						<div class="form-group form-inline justify-content-center">
+							<label for="firstname" class="mr-2">PRENOM</label>
+							<input type="text" class="champ form-control" id="firstname" name="firstname"/>
+						</div>
+					</div>
+					<div class="form-row justify-content-center">
+						<div class="form-group form-inline justify-content-center mr-2">
+							<label for="adress" class="mr-2">ADRESSE</label>
+							<input type="text" class="champ form-control" id="adress" name="adress" />
+						</div>
+					</div>
+					<div class="form-row justify-content-center">
+						<div class="form-group form-inline justify-content-center mr-2">
+							<label for="city" class="mr-2">VILLE</label>
+							<input type="text" class="champ form-control" id="city" name="city"  />
+						</div>
+						<div class="form-group form-inline justify-content-center mr-2">
+							<label for="postalcode" class="mr-2">CODE POSTAL</label>
+							<input type="text" class="champ form-control" id="postalcode" name="postalcode"/>
+						</div>
+					</div>
+					<div id="erreur_code" class="mb-2"></div>
+					<div class="form-row justify-content-center">
+						<div class="form-group form-inline justify-content-center">
+							<label for="mail" class="mr-2">E-MAIL</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										@
+									</div>
+								</div>
+								<input type="email" class="champ form-control" id="mail" name="mail"  />
+							</div>
+						</div>
+					</div>
+					<div id="erreur_mail" class="mb-4"></div>
+					<input type="reset" id="rafraichir" name="rafraichir" value="Effacer" class="btn btn-outline-secondary" />
+					<input type="submit" id="envoi" name="envoi" value="Commander" class="btn btn-success" />
+				</form>
+			</section>
+		</main>
+		<footer class="bg-secondary text-white">
+			<div class="">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<ul class="list-inline text-center pt-3">
+								<li class="list-inline-item"><a href="index.html">Mentions légales</a></li>
+								<li class="list-inline-item">&middot;</li>
+								<li class="list-inline-item"><a href="mailto:contact@orinoco.com">Nous contacter</a></li>
+								<li class="list-inline-item">&middot;</li>
+								<li class="list-inline-item"><a href="#">Livraison</a></li>
+								<li class="list-inline-item">&middot;</li>
+								<li class="list-inline-item"><a href="#">Conditions générales de vente</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="js/cartnumber.js"></script>
+		<script src="js/panier.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	</body>
+</html>

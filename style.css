@@ -1,0 +1,142 @@
+h2 {
+  font-family: "Rajdhani", sans-serif;
+}
+main {
+  background-image: #f3e9f1;
+  background-attachment: fixed;
+  background-size: cover;
+}
+footer a {
+  color: #fff;
+}
+#cart_number {
+  font-weight: bold;
+}
+#title_container {
+  text-align: right;
+  padding-top: 30px;
+  padding-right: 30px;
+}
+#title_container h1 {
+  font-size: 2.8em;
+}
+#banner {
+  background-image: url("bg_body.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  height: 460px;
+}
+#produits {
+  display: flex;
+  flex-wrap: wrap;
+}
+.affichage_produit img {
+  width: 100%;
+}
+.prix_produit {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+#bg_modal {
+  background-image: url("bg_modal.jpg");
+  background-size: cover;
+  height: 250px;
+}
+/* BOUTONS*/
+.fa-caret-square-left {
+  color: grey;
+  cursor: pointer;
+}
+.fa-caret-square-right {
+  color: grey;
+  cursor: pointer;
+}
+#valid_commande a {
+  text-decoration: none;
+}
+#bouton_modal1 a {
+  text-decoration: none;
+  color: #fff;
+}
+#bouton_modal2 a {
+  text-decoration: none;
+  color: #fff;
+}
+#bouton_command {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5em;
+}
+/* PANIER*/
+#tableau_panier td {
+  vertical-align: middle;
+}
+td img {
+  height: 60px;
+}
+#panier_vide {
+  font-size: 2em;
+}
+/* FORMULAIRE*/
+#formulaire p {
+  font-weight: bold;
+}
+#erreur_mail {
+  color: red;
+  font-size: 0.8em;
+}
+#erreur_code {
+  color: red;
+  font-size: 0.8em;
+}
+#no_command {
+  height: 500px;
+  display: flex;
+  align-items: center;
+}
+#confirmation {
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  #banner {
+    height: 230px;
+    justify-content: center;
+  }
+  #title_container {
+    text-align: center;
+    padding-top: 0;
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+  }
+  #title_container h1 {
+    font-size: 1.5em;
+    background-color: rgba(250, 250, 250, 0.8);
+  }
+}
+@media screen and (max-width: 499px) {
+  header {
+    background-color: white;
+  }
+  #banner {
+    height: 230px;
+    justify-content: center;
+  }
+  #title_container {
+    text-align: center;
+    width: 80%;
+    padding-top: 0;
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #title_container h1 {
+    font-size: 1.2em;
+    background-color: rgba(250, 250, 250, 0.8);
+  }
+}
